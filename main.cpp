@@ -21,8 +21,11 @@ int isDigit(char *s);
 int main(){
     char *s = "1677036253-1677036253";
 
-    mod11(s);
+    int result; 
 
+    result = mod11(s);
+
+    printf("\nresult: %d\n", result);
     // char *p;
     // int result, valid;
     // int len, digit, dashes;
@@ -61,8 +64,6 @@ int main(){
     // else if(valid == 4) printf("Wrong number of digits in a single data");
     // else if(valid == 3) printf("Data contains non-digit caracters");
     // else if(valid == 2) printf("Wrong control number");
-
-    printf("\n\n");
     return 0;
 }
 
@@ -105,10 +106,10 @@ int mod11(char *s){
     }
 
     if(valid == 0) printf("All good");
-    else if(valid == 5) printf("Wrong number of data. Too many dashes.");
-    else if(valid == 4) printf("Wrong number of digits in a single data");
-    else if(valid == 3) printf("Data contains non-digit caracters");
-    else if(valid == 2) printf("Wrong control number");
+    else if(valid == 5) {printf("Wrong number of data. Too many dashes.");return valid;}
+    else if(valid == 4) {printf("Wrong number of digits in a single data");return valid;}
+    else if(valid == 3) {printf("Data contains non-digit caracters");return valid;}
+    else if(valid == 2) {printf("Wrong control number");return valid;}
 }
 
 int strLen(char *s){
