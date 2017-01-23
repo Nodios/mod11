@@ -105,7 +105,7 @@ int mod11(char *s){
         }
     }
 
-    if(valid == 0) printf("All good");
+    if(valid == 0) {printf("All good");return valid;}
     else if(valid == 5) {printf("Wrong number of data. Too many dashes.");return valid;}
     else if(valid == 4) {printf("Wrong number of digits in a single data");return valid;}
     else if(valid == 3) {printf("Data contains non-digit caracters");return valid;}
